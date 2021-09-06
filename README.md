@@ -1,2 +1,2 @@
-# humaraAnsh
+# HumaraAnsh
 SWE Project
