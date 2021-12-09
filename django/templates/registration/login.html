@@ -1,28 +1,155 @@
-{% extends 'base.html' %}
+
 {% load crispy_forms_tags %}
+{% load static %}
 
 {% block content %}
-<p><a href="{% url 'signup' %}">signup</a></p>
-  {% if form.non_field_errors %}
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      {% for error in form.non_field_errors %}
-        <p{% if forloop.last %} class="mb-0"{% endif %}>{{ error }}</p>
-      {% endfor %}
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-  {% endif %}
-  <div class="row">
-    <div class="col-lg-4 col-md-6 col-sm-8 col-12">
-      <h2>Log in</h2>
-      <form method="post" novalidate>
-        {% csrf_token %}
-        <input type="hidden" name="next" value="{{ next }}">
-        {{ form.username|as_crispy_field }}
-        {{ form.password|as_crispy_field }}
-        <button type="submit" class="btn btn-primary">Log in</button>
-      </form>
-    </div>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login-HumaraAnsh</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<!-- <link rel="icon" type="image/png" href="{% static '/registration/images/icons/favicon.ico' %}"/> -->
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static '/registration/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static '/registration/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static '/registration/fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static '/registration/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static '/registration/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static '/registration/vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static '/registration/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static '/registration/vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static '/registration/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static '/registration/css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body style="background-color: #666666;">
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" method="post" novalidate>
+					<span class="login100-form-title p-b-43">
+						Login to continue
+					</span>
+					<!-- {% if form.non_field_errors %}
+						<div class="alert alert-danger alert-dismissible fade show" role="alert">
+						{% for error in form.non_field_errors %}
+							<p{% if forloop.last %} class="mb-0"{% endif %}>{{ error }}</p>
+						{% endfor %}
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						</div>
+					{% endif %} -->
+
+					<!-- <form method="post" novalidate> -->
+
+						{% csrf_token %}
+						<!-- {{ form }} -->
+						<input type="hidden" name="next" value="{{ next }}">
+						{{ form.username|as_crispy_field }}
+						{{ form.password|as_crispy_field }}
+
+						<!-- <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+							<input class="input100" type="text" name="email">
+							<span class="input100">{{ form.username }}</span>
+							<span class="focus-input100"></span>
+							<span class="label-input100">UserName</span>
+						</div>
+						
+						
+						<div class="wrap-input100 validate-input" data-validate="Password is required">
+							<input class="input100" type="password" name="pass">
+							<span class="input100">{{ form.password }}</span>
+							<span class="focus-input100"></span>
+							<span class="label-input100">Password</span>
+						</div> -->
+						
+						<br>
+						<div class="container-login100-form-btn">
+							<button type="submit" class="login100-form-btn">Log in</button></div>
+					  <!-- </form> -->
+					  <!-- <div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div> -->
+					
+
+					<div class="flex-sb-m w-full p-t-3 p-b-32">
+						<div class="contact100-form-checkbox">
+							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me" checked>
+							<label class="label-checkbox100" for="ckb1" >
+								Remember me
+							</label>
+						</div>
+
+						<div>
+							<a href="#" class="txt1">
+								Forgot Password?
+							</a>
+						</div>
+					</div>	
+					<div class="text-center p-t-0 p-b-0">
+						<span class="txt2">
+						<p><a href="{% url 'signup' %}">New User? Register Now</a></p>
+						</span>
+					</div>		
+					<hr>
+					<div class="text-center p-t-46 p-b-20">
+						<span class="txt2">
+							or sign up using
+						</span>
+					</div>
+
+					<div class="login100-form-social flex-c-m">
+						<a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
+							<i class="fa fa-facebook-f" aria-hidden="true"></i>
+						</a>
+
+						<a href="#" class="login100-form-social-item flex-c-m bg3 m-r-5">
+							<i class="fa fa-google" aria-hidden="true"></i>
+						</a>
+					</div>
+				</form>
+				<!-- style="background-image: url('{{ STATIC_URL }}/registration/images/nathan-dumlao-EytWx3BOrwI-unsplash.jpg');"" -->
+				<div class="login100-more" >
+					<img src="{% static '/registration/images/nathan-dumlao-EytWx3BOrwI-unsplash.jpg' %}" height="100%" width="100%" style="position: absolute"/>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+	
+<!--===============================================================================================-->
+	<script src="{% static '/registration/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static '/registration/vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static '/registration/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static '/registration/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static '/registration/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static '/registration/vendor/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static '/registration/vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static '/registration/vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static '/registration/js/main.js' %}"></script>
+
+</body>
+</html>
 {% endblock %}
