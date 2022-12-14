@@ -35,15 +35,9 @@ We propose a solution under <br>
 
 - SDG 3 ***Good health and well-being*** <br>
 
-<p align="center">
-<img src="./assets/sdg3.png" width=500;>
-</p>
 
 - SDG 5 ***Achieve gender equality and empower all women and girls*** <br>
 
-<p align="center">
-<img src="./assets/sdg5.png" width=500;>
-</p>
 
 **MeraAnsh is a platform that aims to bridge the gap between doctors and users who want to commence or become  a part of the beautiful excursion of parenthood. We aim to build a one stop destination for all queries one can possibly encounter during this rollercoaster phase of life. From pre to post, MeraAnsh is dedicated to remain a constant. A virtual journal you would want to track and cherish years later!** <br>
 
